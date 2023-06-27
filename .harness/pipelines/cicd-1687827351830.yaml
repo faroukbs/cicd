@@ -24,7 +24,10 @@ pipeline:
                     connectorRef: account.harnessImage
                     image: alpine
                     shell: Sh
-                    command: echo "Welcome to Harness CI"
+                    command: |-
+                      echo "Welcome to Harness CI"
+                      go build 
+                      go test
   properties:
     ci:
       codebase:
